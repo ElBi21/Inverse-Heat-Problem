@@ -1,24 +1,19 @@
-# nmpde-projects
+# Inverse Problem for the Heat Equation
+
+The scope of the project is to train a JAX neural network for approximating, given the heat equation, a parametric map in the form:
+$$
+(\bold{x}, t, \mu) \mapsto u (\bold{x}, t, \mu) \quad\quad \text{where} \quad \bold{x} \in \Omega, \; t \in [0, T], \; \mu \in [\mu_{\min}, \mu_{\max}]
+$$
+
 ### Organizing the source code
-Please place all your sources into the `src` folder.
 
-Binary files must not be uploaded to the repository (including executables).
+All your sources are located into the `src` folder. Any binary file will have to be compiled (instructions are further in the README). Any `gmsh` file needed can be downloaded with the appropriated recipe by an external source.
 
-Mesh files should not be uploaded to the repository. If applicable, upload `gmsh` scripts with suitable instructions to generate the meshes (and ideally a Makefile that runs those instructions). If not applicable, consider uploading the meshes to a different file sharing service, and providing a download link as part of the building and running instructions.
+> [!NOTE] **Prerequisites**
+> The project uses JAX for the training and inference of the model: for this reason, we use `uv` to administer all Python packages. We advi
 
-### Compiling
-To build the executable, make sure you have loaded the needed modules with
-```bash
-$ module load gcc-glibc dealii
-```
-Then run the following commands:
-```bash
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make
-```
-The executable will be created into `build`, and can be executed through
-```bash
-$ ./executable-name
-```
+The project comes with a Makefile, which handles the preparation, build, and run stages. In particular, the recipes are the following:
+
+- `prepare`: downloads `uv` and all the necessary tools through it;
+- `train`: trains the model with `JAX`;
+- `infer`: performs inference through the model.

@@ -1,0 +1,25 @@
+[project]
+name = "inverse-heat-problem"
+version = "0.1.0"
+description = "Model for solving the inverse heat equation problem"
+readme = "README.md"
+authors = [
+    { name = "villard0", email = "leonardo.villeggia@mail.polimi.it" },
+    { name = "PoisonedBullet", email = "???@mail.polimi.it" },
+    { name = "ElBi21", email = "leonardo@biason.org" },
+    { name = "faustozamparelli", email = "fausto.zamparelli@mail.polimi.it" },
+]
+requires-python = ">=3.14"
+dependencies = [
+    "jax[cuda13]>=0.12.0.1",
+    "tqdm>=4.70.1",
+]
+
+[project.scripts]
+ihp = "inverse_heat_problem:main"
+ihp-train = "inverse_heat_problem:train"
+ihp-infer = "inverse_heat_problem:inference"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
