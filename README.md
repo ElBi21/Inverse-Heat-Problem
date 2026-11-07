@@ -9,8 +9,8 @@ $$
 
 All your sources are located into the `src` folder. Any binary file will have to be compiled (instructions are further in the README). Any `gmsh` file needed can be downloaded with the appropriated recipe by an external source.
 
-> [!NOTE] **Prerequisites**
-> The project uses JAX for the training and inference of the model: for this reason, we use `uv` to administer all Python packages. We advi
+> [!NOTE]
+> The project uses JAX for the training and inference of the model: for this reason, we use `uv` to administer all Python packages. We advise users to install it by themselves, as it's a very well done tool that can come in handy for many occasions, but it's also possible to download it in a `tools` folder automatically through the Makefile
 
 The project comes with a Makefile, which handles the preparation, build, and run stages. In particular, the recipes are the following:
 
